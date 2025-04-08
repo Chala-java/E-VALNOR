@@ -16,26 +16,26 @@ public class Producto {
     private String producto_nombre;
     @Column(name = "producto_marca", length = 100, nullable = false)
     private String producto_marca;
-    @Column(name = "producto_descripcion",nullable = true)
+    @Column(name = "producto_descripcion", nullable = true)
     private String producto_descripcion;
     @Column(name = "producto_precio", nullable = false)
     private BigDecimal producto_precio;
 
-    @Column(name = "producto_categoria",length = 150, nullable = false)
+    @Column(name = "producto_categoria", length = 150, nullable = false)
     private String producto_categoria;
-    @Column(name = "producto_imagen",nullable = false)
+    @Column(name = "producto_imagen", nullable = false)
     private String producto_imagen; // URL de la imagen
-    @Column(name = "producto_cantidad",nullable = false)
-    private BigDecimal producto_cantidad;
+    @Column(name = "producto_cantidad", nullable = false)
+    private Integer producto_cantidad;
     @Column(name = "producto_fecha", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime producto_fecha;
 
-    public Producto(){
+    public Producto() {
 
 
     }
 
-    public Producto(Integer id_Producto, String producto_nombre, String producto_marca, String producto_descripcion, BigDecimal producto_precio, String producto_categoria, String producto_imagen, BigDecimal producto_cantidad, LocalDateTime producto_fecha) {
+    public Producto(Integer id_Producto, String producto_nombre, String producto_marca, String producto_descripcion, BigDecimal producto_precio, String producto_categoria, String producto_imagen, Integer producto_cantidad, LocalDateTime producto_fecha) {
         this.id_Producto = id_Producto;
         this.producto_nombre = producto_nombre;
         this.producto_marca = producto_marca;
@@ -103,11 +103,11 @@ public class Producto {
         this.producto_imagen = producto_imagen;
     }
 
-    public BigDecimal getProducto_cantidad() {
+    public Integer getProducto_cantidad() {
         return producto_cantidad;
     }
 
-    public void setProducto_cantidad(BigDecimal producto_cantidad) {
+    public void setProducto_cantidad(Integer producto_cantidad) {
         this.producto_cantidad = producto_cantidad;
     }
 
@@ -118,4 +118,6 @@ public class Producto {
     public void setProducto_fecha(LocalDateTime producto_fecha) {
         this.producto_fecha = producto_fecha;
     }
+
+
 }

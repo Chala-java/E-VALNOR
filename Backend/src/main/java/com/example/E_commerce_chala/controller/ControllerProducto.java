@@ -14,14 +14,6 @@ public class ControllerProducto {
 
     @Autowired
     ProductoServices productoServices;
-   //try {
-     //   return ResponseEntity.status(HttpStatus.CREATED)
-       //         .body(this.userService.saveUser(requestData));
-    //} catch (Exception error) {
-      //  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error.getMessage());
-
-    //}
-//}
 
     @PostMapping
     public ResponseEntity <?> save(@RequestBody Producto solicitarDatos){
