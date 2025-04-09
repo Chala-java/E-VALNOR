@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")  // Permite CORS solo para este controlador
 @RequestMapping("/carritos")
 public class ControllerCarrito {
 
