@@ -1,5 +1,6 @@
 package com.example.E_commerce_chala.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -29,6 +30,12 @@ public class Producto {
     private Integer producto_cantidad;
     @Column(name = "producto_fecha", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime producto_fecha;
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    @JsonBackReference
+    private Categoria categoria;
 
     public Producto() {
 
