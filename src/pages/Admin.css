@@ -1,0 +1,40 @@
+.contenedor {
+    padding: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .producto img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+  }
+  .img 
+  {
+
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    
+  }
+
+
+  
