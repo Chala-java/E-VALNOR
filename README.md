@@ -1,12 +1,69 @@
-# React + Vite
+E-VALNOR - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🖥️ E-VALNOR – Frontend Ecommerce  
+Este proyecto implementa el frontend de la plataforma de e-commerce E-VALNOR utilizando **React** y **Vite**. Diseñado para conectarse con un backend robusto hecho en Spring Boot, el frontend permite una experiencia fluida y moderna para el usuario, con enfoque en velocidad, accesibilidad y estilo profesional.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Ejecutar localmente
 
-## Expanding the ESLint configuration
+Clonar el proyecto
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+https://github.com/Chala-java/E-VALNOR-Front.git
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd E-VALNOR-Front
+```
+
+Instalar dependencias
+
+```bash
+  npm install
+```
+
+Iniciar el servidor
+
+```bash
+  npm run start
+```
+
+
+## 🚀 Características
+
+
+🧪 Tecnologías Usadas
+React
+
+Vite
+
+JavaScript 
+
+Axios
+
+CSS con metodología BEM
+
+React Router DOM
+
+## 🧪 Tecnologías Usadas
+
+
+Java 21
+
+Spring Boot 
+
+Spring Data JPA
+
+PostgreSQL
+
+Hibernate
+
+Maven
+
+
+
+
+
+
