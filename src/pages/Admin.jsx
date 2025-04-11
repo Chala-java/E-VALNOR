@@ -10,11 +10,12 @@ function Admin() {
     producto_precio: "",
     producto_categoria: "",
     producto_cantidad: "",
-    producto_imagen: "",
   });
+  console.log(producto);
 
+
+  const [imagen, setImagen] = useState(null);
   const [productos, setProductos] = useState([]);
-  const [editandoId, setEditandoId] = useState(null);
 
   useEffect(() => {
     cargarProductos();
@@ -29,16 +30,22 @@ function Admin() {
     setProducto({ ...producto, [e.target.name]: e.target.value });
   };
 
+  const handleImagen = (e) => {
+    setImagen(e.target.files[0]);
+  };
+
   const crearProducto = async (e) => {
     e.preventDefault();
 
-    if (editandoId) {
-      await axios.put(`http://localhost:8080/productos/${editandoId}`, producto);
-      setEditandoId(null);
-    } else {
-      await axios.post("http://localhost:8080/productos", producto);
+    const formData = new FormData();
+    for (let key in producto) {
+      formData.append(key, producto[key]);
+    }
+    if (imagen) {
+      formData.append("producto_imagen", imagen);
     }
 
+    await axios.post("http://localhost:8080/productos", formData);
     setProducto({
       producto_nombre: "",
       producto_marca: "",
@@ -46,9 +53,8 @@ function Admin() {
       producto_precio: "",
       producto_categoria: "",
       producto_cantidad: "",
-      producto_imagen: "",
     });
-
+    setImagen(null);
     cargarProductos();
   };
 
@@ -57,22 +63,9 @@ function Admin() {
     cargarProductos();
   };
 
-  const editarProducto = (p) => {
-    setProducto({
-      producto_nombre: p.producto_nombre,
-      producto_marca: p.producto_marca,
-      producto_descripcion: p.producto_descripcion,
-      producto_precio: p.producto_precio,
-      producto_categoria: p.producto_categoria,
-      producto_cantidad: p.producto_cantidad,
-      producto_imagen: p.producto_imagen,
-    });
-    setEditandoId(p.id_Producto);
-  };
-
   return (
     <div className="contenedor">
-      <h2>{editandoId ? "Editar Producto" : "Crear Producto"}</h2>
+      <h2>Crear Producto</h2>
       <form onSubmit={crearProducto}>
         <input name="producto_nombre" placeholder="Nombre" onChange={handleInput} value={producto.producto_nombre} />
         <input name="producto_marca" placeholder="Marca" onChange={handleInput} value={producto.producto_marca} />
@@ -80,8 +73,8 @@ function Admin() {
         <input name="producto_precio" type="number" placeholder="Precio" onChange={handleInput} value={producto.producto_precio} />
         <input name="producto_categoria" placeholder="Categoría" onChange={handleInput} value={producto.producto_categoria} />
         <input name="producto_cantidad" type="number" placeholder="Cantidad" onChange={handleInput} value={producto.producto_cantidad} />
-        <input name="producto_imagen" placeholder="URL de imagen" onChange={handleInput} value={producto.producto_imagen} />
-        <button type="submit">{editandoId ? "Actualizar" : "Crear"}</button>
+        <input type="file" onChange={handleImagen} />
+        <button type="submit">Crear</button>
       </form>
 
       <h3>Productos</h3>
@@ -94,12 +87,11 @@ function Admin() {
           <p>Categoría: {p.producto_categoria}</p>
           <p>Cantidad: {p.producto_cantidad}</p>
           {p.producto_imagen && (
-            <img src={p.producto_imagen} alt={p.producto_nombre} className="img-producto" />
-          )}
-         <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
-            <button onClick={() => editarProducto(p)}>Editar</button>
-            <button onClick={() => eliminarProducto(p.id_Producto)}>Eliminar</button>
-          </div>
+  <img src={`http://localhost:8080/uploads/${p.producto_imagen}`} alt={p.producto_nombre} className="img-producto" />
+)}
+
+
+          <button onClick={() => eliminarProducto(p.id_Producto)}>Eliminar</button>
         </div>
       ))}
     </div>

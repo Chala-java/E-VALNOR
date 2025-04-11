@@ -1,213 +1,60 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  font-family: sans-serif;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-}
-
 .lista {
-  width: 100%;
-  padding: 40px 20px;
-  background-color: #fefefe;
-  border-top: 5px solid #ccc;
-  text-align: center;
-}
-
-.lista section {
-  margin-bottom: 60px;
-  padding-bottom: 30px;
-  border-bottom: 2px solid #ddd;
-}
-
-.lista__titulo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #111;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-}
-
-.lista__productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 30px 0;
-  border: none;
-}
-
-.producto-card {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 250px;
-  transition: transform 0.2s ease;
-}
-
-.producto-card:hover {
-  transform: translateY(-4px);
-}
-
-.producto-card__imagen {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.producto-card__nombre {
-  font-size: 16px;
-  margin: 12px 0 6px;
-  color: #000;
-}
-
-.producto-card__marca {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 6px;
-}
-
-.producto-card__precio {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-}
-
-.producto-card__boton {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 10px;
-}
-
-.producto-card__boton:hover {
-  background-color: #333;
-}
-
-.lista__vacio {
-  font-size: 16px;
-  color: #999;
-  margin-top: 40px;
-}
-
-.presentacion__texto {
-  animation: subir 1s ease-out forwards;
-}
-
-@keyframes subir {
-  0% {
-    transform: translate(-50%, 50%);
-    opacity: 0;
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
   }
-  100% {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-}
-
-.seccion-ropa {
-  background-color: #fafafa;
-  padding-top: 20px;
-}
-
-.seccion-categoria {
-  background-color: #f2f2f2;
-  padding-top: 20px;
-}
-
-.lista-productos {
-  width: 100%;
-  height: 50%;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenido-principal {
-  padding-top: 144px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .producto-card {
-    width: 220px;
-  }
-}
-
-@media (max-width: 768px) {
-  .producto-card {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .lista__productos {
-    gap: 20px;
-  }
-
+  
   .lista__titulo {
-    font-size: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
-}
-
-@media (max-width: 480px) {
-  .producto-card__imagen {
-    height: 200px;
-  }
-
-  .producto-card__nombre {
-    font-size: 15px;
-  }
-
-  .producto-card__precio {
-    font-size: 15px;
-  }
-
-  .producto-card__boton {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .lista {
-    padding: 30px 10px;
-  }
-
+  
   .lista__productos {
-    gap: 12px;
-    padding: 20px 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
   }
-
+  
   .producto-card {
-    max-width: 90%;
+    width: 240px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
+  
+ 
+  
+  .producto-card__imagen {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .producto-card__nombre {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.4rem;
+    color: #000;
+  }
+  
+  .producto-card__precio {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .lista__vacio {
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 3rem;
+  }
+  
