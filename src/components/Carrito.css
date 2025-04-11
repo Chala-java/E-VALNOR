@@ -1,0 +1,126 @@
+.carrito__modal-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .carrito__modal-contenido {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .carrito__producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+  }
+  
+  .carrito__producto img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 8px;
+  }
+  
+  .carrito__producto-detalle p {
+    margin: 4px 0;
+  }
+  
+  .carrito__botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .carrito__botones button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carrito__botones button:hover {
+    background-color: #444;
+  }
+  
+  /* Botón flotante con contador */
+  .carrito__flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #111;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .carrito__flotante:hover {
+    transform: scale(1.1);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carrito__icono {
+    width: 28px;
+    height: 28px;
+    color: white;
+  }
+  
+  .carrito__badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+
+  @media (max-width: 480px) {
+    .carrito__flotante {
+      width: 50px;
+      height: 50px;
+      bottom: 16px;
+      right: 16px;
+    }
+  
+    .carrito__icono {
+      width: 22px;
+      height: 22px;
+    }
+  
+    .carrito__badge {
+      font-size: 0.65rem;
+      padding: 3px 6px;
+    }
+  }
+  
